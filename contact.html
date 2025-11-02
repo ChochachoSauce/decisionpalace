@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Fate Engine</title>
+  <meta name="description" content="Contact the Fate Engine team." />
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Fate Engine</a>
+      <nav class="nav">
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <h1>Contact</h1>
+    <p>Have feedback or a question about the Fate Engine? Use the form below or email <a href="mailto:hello@example.com">hello@example.com</a>.</p>
+
+    <form id="contact-form" action="mailto:hello@example.com" method="post" enctype="text/plain">
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" required>
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+
+      <button type="submit" class="btn-primary">Send</button>
+    </form>
+
+    <p><a href="index.html">← Back to home</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Fate Engine</small>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
+</body>
+</html>

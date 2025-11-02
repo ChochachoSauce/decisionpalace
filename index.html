@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fate Engine — Choose Your Fate</title>
+  <meta name="description" content="Drop your question into the Fate Engine, offer a coin, and receive a cryptic reading." />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Fate Engine</a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <h1 class="title">Choose Your Fate</h1>
+          <p class="tagline">Drop your question. Offer a coin. Let the Fate Engine answer — cryptic readings for curiosity and fun.</p>
+
+          <form id="fate-form" class="fate-form" autocomplete="off" aria-labelledby="ask-label">
+            <label id="ask-label" for="question" class="visually-hidden">Your question for the Fate Engine</label>
+            <textarea id="question" name="question" placeholder="Type your question here (e.g. Will I get that job?)" rows="4" required></textarea>
+
+            <div class="tier-grid" role="radiogroup" aria-label="Choose a tier">
+              <label class="tier" tabindex="0">
+                <input type="radio" name="tier" value="free" checked>
+                <span class="tier-title">Free</span>
+                <span class="tier-desc">Quick, cryptic answer.</span>
+                <span class="tier-cost">Free</span>
+              </label>
+
+              <label class="tier" tabindex="0">
+                <input type="radio" name="tier" value="offer420">
+                <span class="tier-title">$4.20</span>
+                <span class="tier-desc">Longer reading + emoji summary.</span>
+                <span class="tier-cost">$4.20</span>
+              </label>
+
+              <label class="tier" tabindex="0">
+                <input type="radio" name="tier" value="donation">
+                <span class="tier-title">Pay What You Want</span>
+                <span class="tier-desc">Custom emphasis & priority result.</span>
+                <span class="tier-cost">—</span>
+              </label>
+            </div>
+
+            <div class="form-actions">
+              <button id="toss-btn" type="button" class="btn-primary">Toss the Skull</button>
+              <button id="preview-btn" type="button" class="btn-ghost">Preview Outcome</button>
+            </div>
+            <p class="small muted">By using the Fate Engine you accept the <a href="disclaimer.html">disclaimer</a>.</p>
+          </form>
+        </div>
+
+        <div class="hero-right">
+          <div class="skull-stage" aria-hidden="false">
+            <!-- hand-drawn skull shown by default, neon variant overlays for effect -->
+            <div class="skull-wrap">
+              <!-- inline IMG elements to allow CSS animation -->
+              <img src="assets/skull.svg" alt="Illustrated skull" id="skullHand" class="skull-img hand"/>
+              <img src="assets/skull-neon.svg" alt="Neon skull" id="skullNeon" class="skull-img neon" aria-hidden="true"/>
+              <canvas id="particles" class="particles-canvas" aria-hidden="true"></canvas>
+            </div>
+            <div id="resultCard" class="result-card" aria-live="polite"></div>
+          </div>
+
+          <div class="how-it-works">
+            <h3>How it works</h3>
+            <ol>
+              <li>Type your question.</li>
+              <li>Choose a tier (Free / $4.20 / PWYW).</li>
+              <li>Click <strong>Toss the Skull</strong> to receive your reading.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="examples container">
+      <h2>Sample readings</h2>
+      <ul>
+        <li><strong>Free:</strong> “A crossroads at dawn. Seek counsel.”</li>
+        <li><strong>$4.20:</strong> “Silver moon. Open the left door. 🍂 Favorable in 3 weeks.”</li>
+        <li><strong>PWYW:</strong> “Remember the river — patience and sharp action.”</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Fate Engine — Built with curiosity. <a href="contact.html">Contact</a></small>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
